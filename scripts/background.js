@@ -102,11 +102,23 @@ chrome.runtime.onInstalled.addListener(() => {
     });
 });
 
+// Track content scripts prontos
+let contentScriptsReady = {};
+
 // Listener de mensagens
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     log('debug', t('logMessageReceived'), { action: message.action });
     
     switch (message.action) {
+        case 'contentScriptReady':
+            // Content script notificou que está pronto
+            if (sender.tab) {
+                contentScriptsReady[sender.tab.id] = true;
+                log('success', '✅ Content script registrado', { tabId: sender.tab.id, url: message.url });
+            }
+            sendResponse({ success: true });
+            break;
+            
         case 'startAutomation':
             startAutomation(message.settings);
             sendResponse({ success: true });
@@ -137,6 +149,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
     
     return true;
+});
+
+// Limpar registro quando tab fecha
+chrome.tabs.onRemoved.addListener((tabId) => {
+    delete contentScriptsReady[tabId];
 });
 
 // Alarme para execução diária
@@ -217,56 +234,76 @@ async function startAutomation(settings) {
             throw new Error('Aba foi fechada antes de iniciar');
         }
         
-        // O content script é injetado automaticamente pelo manifest
-        // Vamos tentar fazer ping e aguardar ele ficar pronto
-        log('debug', t('logWaitingContentScript'));
-        sendLogToPopup(t('logWaitingContentScript'), 'info');
-        
-        // Tentar ping várias vezes até o content script responder
-        let contentScriptReady = false;
-        for (let attempt = 1; attempt <= 10; attempt++) {
-            log('debug', t('logContentScriptAttempt').replace('{0}', attempt));
-            try {
-                const pingResponse = await chrome.tabs.sendMessage(tab.id, { action: 'ping' });
-                if (pingResponse && pingResponse.ready) {
-                    log('success', t('logContentScriptReady'), pingResponse);
-                    sendLogToPopup(t('logContentScriptReady'), 'success');
+        // Verificar se content script já se registrou
+        if (contentScriptsReady[tab.id]) {
+            log('success', '✅ Content script já registrado!');
+            sendLogToPopup(t('logContentScriptReady'), 'success');
+        } else {
+            // O content script é injetado automaticamente pelo manifest
+            // Vamos tentar fazer ping e aguardar ele ficar pronto
+            log('debug', t('logWaitingContentScript'));
+            sendLogToPopup(t('logWaitingContentScript'), 'info');
+            
+            // Tentar ping várias vezes até o content script responder
+            let contentScriptReady = false;
+            for (let attempt = 1; attempt <= 15; attempt++) {
+                // Verificar registro primeiro
+                if (contentScriptsReady[tab.id]) {
+                    log('success', '✅ Content script registrou-se!');
                     contentScriptReady = true;
                     break;
                 }
-            } catch (pingError) {
-                log('debug', t('logAttemptFailed').replace('{0}', attempt));
-            }
-            await new Promise(resolve => setTimeout(resolve, 1000));
-        }
-        
-        if (!contentScriptReady) {
-            // Tentar injetar manualmente como fallback
-            log('warn', t('logInjectingManually'));
-            sendLogToPopup(t('logInjectingManually'), 'info');
-            
-            try {
-                await chrome.scripting.executeScript({
-                    target: { tabId: tab.id },
-                    files: ['scripts/content.js']
-                });
-                log('debug', t('logScriptInjected'));
-                await new Promise(resolve => setTimeout(resolve, 2000));
                 
-                // Tentar ping novamente
-                const retryPing = await chrome.tabs.sendMessage(tab.id, { action: 'ping' });
-                if (retryPing && retryPing.ready) {
-                    log('success', t('logContentScriptReady'));
-                    sendLogToPopup(t('logContentScriptReady'), 'success');
-                    contentScriptReady = true;
+                log('debug', t('logContentScriptAttempt').replace('{0}', attempt));
+                try {
+                    const pingResponse = await chrome.tabs.sendMessage(tab.id, { action: 'ping' });
+                    if (pingResponse && pingResponse.ready) {
+                        log('success', t('logContentScriptReady'), pingResponse);
+                        sendLogToPopup(t('logContentScriptReady'), 'success');
+                        contentScriptReady = true;
+                        break;
+                    }
+                } catch (pingError) {
+                    log('debug', t('logAttemptFailed').replace('{0}', attempt));
                 }
-            } catch (injectError) {
-                log('error', t('logInjectionFailed'), injectError);
+                await new Promise(resolve => setTimeout(resolve, 1000));
             }
-        }
-        
-        if (!contentScriptReady) {
-            throw new Error(t('logContentScriptNotResponding'));
+            
+            if (!contentScriptReady) {
+                // Tentar injetar manualmente como fallback
+                log('warn', t('logInjectingManually'));
+                sendLogToPopup(t('logInjectingManually'), 'info');
+                
+                try {
+                    // Primeiro injetar config.js
+                    await chrome.scripting.executeScript({
+                        target: { tabId: tab.id },
+                        files: ['scripts/config.js']
+                    });
+                    
+                    // Depois injetar content.js
+                    await chrome.scripting.executeScript({
+                        target: { tabId: tab.id },
+                        files: ['scripts/content.js']
+                    });
+                    log('debug', t('logScriptInjected'));
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    // Tentar ping novamente
+                    const retryPing = await chrome.tabs.sendMessage(tab.id, { action: 'ping' });
+                    if (retryPing && retryPing.ready) {
+                        log('success', t('logContentScriptReady'));
+                        sendLogToPopup(t('logContentScriptReady'), 'success');
+                        contentScriptReady = true;
+                    }
+                } catch (injectError) {
+                    log('error', t('logInjectionFailed'), injectError);
+                }
+            }
+            
+            if (!contentScriptReady) {
+                throw new Error(t('logContentScriptNotResponding'));
+            }
         }
         
         // Iniciar processo de automação

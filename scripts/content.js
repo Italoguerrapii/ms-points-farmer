@@ -4,7 +4,16 @@
 console.log('🤖 ===================================');
 console.log('🤖 MICROSOFT REWARDS BOT - CONTENT SCRIPT');
 console.log('🤖 URL:', window.location.href);
+console.log('🤖 Timestamp:', new Date().toISOString());
 console.log('🤖 ===================================');
+
+// Notificar background que content script está pronto
+try {
+    chrome.runtime.sendMessage({ action: 'contentScriptReady', url: window.location.href });
+    console.log('🤖 Notificação enviada ao background');
+} catch (e) {
+    console.log('🤖 Erro ao notificar background:', e);
+}
 
 // Configurações
 const CONFIG = {
