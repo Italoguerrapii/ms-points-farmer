@@ -1,72 +1,229 @@
-# Rewards Tracker & Helper 🎯
+# 🏆 Microsoft Rewards Bot - Auto Farmer Extension
 
-A browser extension to track and manage your Microsoft Rewards activities.
+> **Automatize a coleta de pontos do Microsoft Rewards com esta extensão para Chrome/Edge!**
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Platform](https://img.shields.io/badge/platform-Edge%20%7C%20Chrome-brightgreen)
-
-## ✨ Features
-
-- 📊 **Progress Dashboard** - Track your daily rewards progress
-- 🎴 **Activity Manager** - View and manage daily activities
-- 🔔 **Smart Reminders** - Never miss your daily rewards
-- 📱 **Multi-device Support** - Works on desktop and mobile views
-- 📈 **Statistics** - Monitor your points over time
-
-## 📥 Installation
-
-### From Chrome Web Store
-Coming soon!
-
-### From Microsoft Edge Add-ons
-Coming soon!
-
-### Manual Installation (Developer Mode)
-
-1. Download or clone this repository
-2. Open your browser's extension page:
-   - **Edge**: `edge://extensions`
-   - **Chrome**: `chrome://extensions`
-3. Enable "Developer mode"
-4. Click "Load unpacked"
-5. Select the extension folder
-
-## 🚀 Usage
-
-1. Click the extension icon in your browser toolbar
-2. Sign in to your Microsoft Rewards account
-3. View your current progress and available activities
-4. Use the quick actions to navigate to rewards pages
-
-## 📋 Requirements
-
-- Microsoft Edge or Google Chrome browser
-- Microsoft Rewards account
-
-## 🔒 Privacy
-
-**FOR EDUCATIONAL PURPOSES ONLY**
-
-This extension is provided "as is" without warranty of any kind. By using this software, you acknowledge that:
-
-- This project is NOT affiliated with, endorsed by, or connected to Microsoft Corporation
-- Use of this extension may violate Microsoft's Terms of Service
-- The developer assumes NO responsibility for any account suspensions, bans, or other consequences
-- You use this extension entirely at your own risk
-- This software is intended for educational and research purposes only
-
-**By installing and using this extension, you agree to these terms.**
-
-## 👨‍💻 Author
-
-**Italo Guerra**
-- GitHub: [@Italoguerrapii](https://github.com/Italoguerrapii)
-
-## 📄 License
-
-MIT License - feel free to use and modify.
+![Platform](https://img.shields.io/badge/platform-Chrome%20%7C%20Edge-brightgreen)
+![Stars](https://img.shields.io/github/stars/Italoguerrapii/ms-points-farmer?style=social)
 
 ---
 
-⭐ If you find this useful, please leave a review!
+## 🔥 O que é?
+
+Uma **extensão de navegador** que automatiza a coleta de pontos do **Microsoft Rewards** fazendo:
+
+- ✅ **45 buscas Desktop** automaticamente
+- ✅ **35 buscas Mobile** (com User-Agent spoofing)
+- ✅ **Cards diários** (daily sets, quizzes, polls)
+- ✅ **Delays humanizados** para evitar detecção
+- ✅ **+300 pontos por dia** sem esforço!
+
+---
+
+## 🎯 Keywords / Palavras-chave
+
+`microsoft rewards bot` `microsoft rewards farmer` `bing rewards bot` `auto search bing` `microsoft points bot` `rewards automation` `bing search bot` `microsoft rewards hack` `free xbox game pass` `farm microsoft points` `bing rewards farmer` `auto bing search` `microsoft rewards script` `edge rewards bot`
+
+---
+
+## 📸 Preview
+
+```
+┌─────────────────────────────────────┐
+│  🏆 Rewards Tracker                 │
+├─────────────────────────────────────┤
+│  🖥️ Desktop    📱 Mobile    🎯 Daily │
+│    45/45         35/35        3/3   │
+├─────────────────────────────────────┤
+│  [▶️ Start All Tasks]               │
+│                                     │
+│  [🖥️ Desktop] [📱 Mobile] [🎯 Daily]│
+├─────────────────────────────────────┤
+│  📋 Activity Log                    │
+│  ✅ Desktop searches completed      │
+│  ✅ Mobile searches completed       │
+│  ✅ Daily sets completed            │
+│  🎉 +290 points earned!             │
+└─────────────────────────────────────┘
+```
+
+---
+
+## 🚀 Instalação (2 minutos)
+
+### Passo 1: Baixar
+
+```bash
+git clone https://github.com/Italoguerrapii/ms-points-farmer.git
+```
+
+**Ou** clique em **[Code] → [Download ZIP]** e extraia.
+
+### Passo 2: Instalar no Navegador
+
+#### Microsoft Edge:
+1. Abra `edge://extensions`
+2. Ative o **"Modo do desenvolvedor"** (canto inferior esquerdo)
+3. Clique em **"Carregar sem compactação"**
+4. Selecione a pasta `ms-points-farmer`
+
+#### Google Chrome:
+1. Abra `chrome://extensions`
+2. Ative o **"Modo do desenvolvedor"** (canto superior direito)
+3. Clique em **"Carregar sem compactação"**
+4. Selecione a pasta `ms-points-farmer`
+
+### Passo 3: Usar
+
+1. **Faça login** em https://rewards.bing.com
+2. Clique no **ícone da extensão** 🏆
+3. Clique em **"Start All Tasks"** ou escolha individualmente:
+   - 🖥️ **Desktop** - 45 buscas desktop
+   - 📱 **Mobile** - 35 buscas mobile
+   - 🎯 **Daily** - Cards e atividades diárias
+
+---
+
+## 📖 Como Funciona
+
+### 🖥️ Buscas Desktop (45 buscas = 150 pontos)
+- Gera termos de busca aleatórios com **2.9 bilhões de combinações**
+- Delay de **8-15 segundos** entre buscas (humanizado)
+- Pausa a cada **5 buscas** para simular comportamento real
+
+### 📱 Buscas Mobile (35 buscas = 100 pontos)
+- Usa **User-Agent spoofing** para simular iPhone
+- Inclui headers `Sec-CH-UA-Mobile` e `Sec-CH-UA-Platform`
+- Mesmos delays humanizados
+
+### 🎯 Cards Diários (3+ cards = 30-90 pontos)
+- Detecta automaticamente cards disponíveis
+- Pula cards já completados
+- Ignora cards de indicação/promoção
+- Abre e fecha cada card automaticamente
+
+---
+
+## ⚙️ Configurações
+
+| Opção | Descrição |
+|-------|-----------|
+| Desktop searches | Ativar/desativar buscas desktop |
+| Mobile searches | Ativar/desativar buscas mobile |
+| Daily activities | Ativar/desativar cards diários |
+| Daily reminder | Notificação às 10:00 AM |
+
+---
+
+## 🛡️ Anti-Detecção
+
+A extensão usa várias técnicas para evitar banimento:
+
+- ✅ **Delays aleatórios** (8-15s entre buscas)
+- ✅ **Pausas periódicas** (a cada 5 buscas)
+- ✅ **Termos de busca variados** (2.9B combinações)
+- ✅ **Scroll aleatório** na página
+- ✅ **User-Agent realista** (iPhone iOS 17)
+- ✅ **Headers completos** de navegador mobile
+
+---
+
+## 🔧 Tecnologias
+
+- **Manifest V3** (padrão mais recente)
+- **Service Worker** (roda em background)
+- **Content Scripts** (interage com páginas)
+- **Chrome APIs** (storage, tabs, scripting)
+
+---
+
+## 📊 Pontos por Dia
+
+| Atividade | Pontos |
+|-----------|--------|
+| 45 buscas Desktop | ~150 |
+| 35 buscas Mobile | ~100 |
+| 3 cards diários | ~30-90 |
+| **TOTAL** | **~280-340** |
+
+**Por mês:** ~8.400-10.200 pontos 🎉
+
+---
+
+## ❓ FAQ
+
+### É seguro usar?
+Use por sua conta e risco. A extensão usa delays humanizados para minimizar riscos.
+
+### Funciona no Brasil?
+Sim! Microsoft Rewards está disponível no Brasil.
+
+### Precisa deixar o navegador aberto?
+Sim, enquanto a automação está rodando.
+
+### Posso usar em várias contas?
+Sim, mas use perfis diferentes do navegador.
+
+### Por que os cards mostram 0?
+Provavelmente já estão todos completados. Tente no dia seguinte.
+
+---
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas!
+
+1. Fork o projeto
+2. Crie sua branch (`git checkout -b feature/NovaFeature`)
+3. Commit suas mudanças (`git commit -m 'Add NovaFeature'`)
+4. Push para a branch (`git push origin feature/NovaFeature`)
+5. Abra um Pull Request
+
+---
+
+## ⭐ Gostou? Deixe uma Star!
+
+Se este projeto te ajudou, **deixe uma ⭐ star** no repositório!
+
+Isso ajuda mais pessoas a encontrarem o projeto.
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Italoguerrapii/ms-points-farmer&type=Date)](https://star-history.com/#Italoguerrapii/ms-points-farmer&Date)
+
+---
+
+## 📞 Contato
+
+**Italo Guerra**
+- GitHub: [@Italoguerrapii](https://github.com/Italoguerrapii)
+- Issues: [Reportar Bug](https://github.com/Italoguerrapii/ms-points-farmer/issues)
+
+---
+
+## ⚠️ Disclaimer / Aviso Legal
+
+```
+Este projeto é apenas para FINS EDUCACIONAIS.
+
+- NÃO é afiliado, endossado ou conectado à Microsoft Corporation
+- O uso pode violar os Termos de Serviço da Microsoft
+- O desenvolvedor NÃO se responsabiliza por suspensões ou banimentos
+- Use INTEIRAMENTE por sua conta e risco
+
+Ao usar esta extensão, você concorda com estes termos.
+```
+
+---
+
+## 📄 Licença
+
+MIT License - Sinta-se livre para usar e modificar.
+
+---
+
+<p align="center">
+  <b>Feito com ❤️ por <a href="https://github.com/Italoguerrapii">Italo Guerra</a></b>
+  <br>
+  <br>
+  <a href="https://github.com/Italoguerrapii/ms-points-farmer">⭐ Star este repo se foi útil!</a>
+</p>
