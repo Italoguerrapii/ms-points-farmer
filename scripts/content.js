@@ -15,8 +15,20 @@ try {
     console.log('🤖 Erro ao notificar background:', e);
 }
 
-// Configurações
-const CONFIG = {
+// Configurações (usa CONFIG do config.js se disponível, senão define)
+if (typeof CONFIG === 'undefined') {
+    var CONFIG = {
+        DESKTOP_SEARCHES: 45,
+        MOBILE_SEARCHES: 35,
+        MIN_DELAY: 8000,
+        MAX_DELAY: 15000,
+        PAUSE_EVERY: 5,
+        PAUSE_DURATION: 3000
+    };
+}
+
+// Configurações locais do content script
+const CONTENT_CONFIG = {
     searchDelay: { min: 3000, max: 6000 },
     clickDelay: { min: 1000, max: 2000 },
     scrollDelay: 500,
@@ -318,7 +330,7 @@ async function performSearches(type, count) {
                 
                 // Ir para Bing
                 window.location.href = `https://www.bing.com/search?q=${encodeURIComponent(term)}`;
-                await sleep(randomDelay(CONFIG.searchDelay.min, CONFIG.searchDelay.max));
+                await sleep(randomDelay(CONTENT_CONFIG.searchDelay.min, CONTENT_CONFIG.searchDelay.max));
                 
                 // Scroll aleatório para simular leitura
                 await randomScroll();
@@ -398,7 +410,7 @@ async function randomScroll() {
         top: scrollAmount,
         behavior: 'smooth'
     });
-    await sleep(CONFIG.scrollDelay);
+    await sleep(CONTENT_CONFIG.scrollDelay);
 }
 
 // Fechar modais/popups
