@@ -46,11 +46,17 @@ Coming soon!
 
 ## 🔒 Privacy
 
-This extension:
-- Does NOT collect any personal data
-- Does NOT store your credentials
-- Only works on Microsoft Rewards pages
-- All data stays in your browser
+**FOR EDUCATIONAL PURPOSES ONLY**
+
+This extension is provided "as is" without warranty of any kind. By using this software, you acknowledge that:
+
+- This project is NOT affiliated with, endorsed by, or connected to Microsoft Corporation
+- Use of this extension may violate Microsoft's Terms of Service
+- The developer assumes NO responsibility for any account suspensions, bans, or other consequences
+- You use this extension entirely at your own risk
+- This software is intended for educational and research purposes only
+
+**By installing and using this extension, you agree to these terms.**
 
 ## 👨‍💻 Author
 

@@ -330,6 +330,17 @@ body {
     font-weight: 600;
 }
 
+/* Disclaimer */
+.disclaimer {
+    padding: 10px 15px;
+    background: #fff3cd;
+    border-top: 1px solid #ffc107;
+    text-align: center;
+    font-size: 10px;
+    color: #856404;
+    line-height: 1.4;
+}
+
 /* Scrollbar */
 .log-container::-webkit-scrollbar {
     width: 6px;
