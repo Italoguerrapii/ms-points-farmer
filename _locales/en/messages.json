@@ -127,6 +127,34 @@
     "message": "Waiting {0}s...",
     "description": "Waiting delay log"
   },
+  "logServiceWorkerActive": {
+    "message": "Service worker active",
+    "description": "Service worker active log"
+  },
+  "logSendingMessage": {
+    "message": "Sending message to tab",
+    "description": "Sending message log"
+  },
+  "logWaitingLoad": {
+    "message": "⏳ Waiting to load...",
+    "description": "Waiting to load log"
+  },
+  "logScrollCards": {
+    "message": "📜 Scrolling to load cards...",
+    "description": "Scroll cards log"
+  },
+  "logCardsResult": {
+    "message": "Cards: {0} found, {1} processed, {2} already completed",
+    "description": "Cards result log"
+  },
+  "logAutomationCompleteSuccess": {
+    "message": "🎉 Automation completed successfully!",
+    "description": "Automation complete success log"
+  },
+  "notifAutomationComplete": {
+    "message": "🎉 Automation Complete!",
+    "description": "Notification title"
+  },
   "statDesktop": {
     "message": "Desktop",
     "description": "Desktop label"

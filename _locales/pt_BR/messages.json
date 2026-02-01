@@ -127,6 +127,34 @@
     "message": "Aguardando {0}s...",
     "description": "Log aguardando delay"
   },
+  "logServiceWorkerActive": {
+    "message": "Service worker ativo",
+    "description": "Log service worker ativo"
+  },
+  "logSendingMessage": {
+    "message": "Enviando mensagem para aba",
+    "description": "Log enviando mensagem"
+  },
+  "logWaitingLoad": {
+    "message": "⏳ Aguardando carregamento...",
+    "description": "Log aguardando carregamento"
+  },
+  "logScrollCards": {
+    "message": "📜 Scroll para carregar cards...",
+    "description": "Log scroll cards"
+  },
+  "logCardsResult": {
+    "message": "Cards: {0} encontrados, {1} processados, {2} já completados",
+    "description": "Log resultado cards"
+  },
+  "logAutomationCompleteSuccess": {
+    "message": "🎉 Automação concluída com sucesso!",
+    "description": "Log automação completa sucesso"
+  },
+  "notifAutomationComplete": {
+    "message": "🎉 Automação Concluída!",
+    "description": "Título notificação"
+  },
   "statDesktop": {
     "message": "Desktop",
     "description": "Label desktop"

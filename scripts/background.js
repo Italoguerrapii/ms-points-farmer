@@ -55,9 +55,16 @@ chrome.storage.onChanged.addListener((changes) => {
 // Logger simples para background
 function log(level, message, data = null) {
     const timestamp = new Date().toISOString();
-    const logEntry = { timestamp, level, message, data, sessionId: 'bg_' + Date.now() };
     
-    console.log(`[${level.toUpperCase()}] ${message}`, data || '');
+    // Traduzir mensagem se for uma chave de tradução
+    let translatedMessage = message;
+    if (message && !message.includes(' ') && translations[message]) {
+        translatedMessage = translations[message];
+    }
+    
+    const logEntry = { timestamp, level, message: translatedMessage, data, sessionId: 'bg_' + Date.now() };
+    
+    console.log(`[${level.toUpperCase()}] ${translatedMessage}`, data || '');
     
     // Salvar no storage
     chrome.storage.local.get(['logs'], (result) => {
@@ -70,7 +77,7 @@ function log(level, message, data = null) {
     // Notificar popup (se estiver aberto)
     chrome.runtime.sendMessage({
         type: 'log',
-        message: message,
+        message: translatedMessage,
         logType: level,
         timestamp: timestamp
     }).catch(() => {
@@ -336,7 +343,7 @@ async function startAutomation(settings) {
 
 // Função segura para enviar mensagem para tab com timeout estendido
 async function sendMessageToTab(tabId, message, timeoutMs = 120000) {
-    log('debug', 'Enviando mensagem para tab', { tabId, action: message.action });
+    log('debug', t('logSendingMessage'), { tabId, action: message.action });
     
     return new Promise(async (resolve, reject) => {
         const timeoutId = setTimeout(() => {
@@ -398,14 +405,14 @@ async function executeAutomationSteps(tabId, settings) {
                 sendStatsUpdate({ cardsCompleted: cardsCompleted });
                 
                 if (cardsFound > 0 && cardsCompleted === 0) {
-                    sendLogToPopup(`✅ ${cardsFound} cards encontrados, todos já completados!`, 'success');
+                    sendLogToPopup(`✅ ${cardsFound} cards - ${t('logAutomationComplete')}`, 'success');
                 } else if (cardsCompleted > 0) {
-                    sendLogToPopup(`✅ ${cardsCompleted} cards processados!`, 'success');
+                    sendLogToPopup(`✅ ${cardsCompleted} cards processed!`, 'success');
                 } else {
-                    sendLogToPopup(`ℹ️ Nenhum card disponível`, 'info');
+                    sendLogToPopup(`ℹ️ No cards available`, 'info');
                 }
                 
-                log('info', `Cards: ${cardsFound} encontrados, ${cardsCompleted} processados, ${alreadyCompleted} já completados`);
+                log('info', t('logCardsResult').replace('{0}', cardsFound).replace('{1}', cardsCompleted).replace('{2}', alreadyCompleted));
             } catch (cardError) {
                 log('error', 'Erro ao processar cards', cardError);
                 sendLogToPopup('⚠️ Erro nos cards, continuando...', 'error');
@@ -451,16 +458,16 @@ async function executeAutomationSteps(tabId, settings) {
         }
         
         // Finalizar
-        log('success', '🎉 Automação concluída!');
+        log('success', t('logAutomationComplete'));
         sendProgressToPopup(100);
         sendCompleteToPopup();
-        sendLogToPopup('🎉 Automação concluída com sucesso!', 'success');
+        sendLogToPopup(t('logAutomationCompleteSuccess'), 'success');
         
         // Notificação de sucesso
         chrome.notifications.create({
             type: 'basic',
             iconUrl: 'icons/icon128.png',
-            title: '🎉 Automação Concluída!',
+            title: t('notifAutomationComplete'),
             message: 'Microsoft Rewards Bot finalizou com sucesso!'
         }).catch(() => {});
         
@@ -856,9 +863,15 @@ function waitForTabLoad(tabId) {
 
 // Funções de comunicação com popup (NÃO BLOQUEIAM SE POPUP FECHADO!)
 function sendLogToPopup(message, logType = 'info') {
+    // Traduzir mensagem se for uma chave de tradução
+    let translatedMessage = message;
+    if (message && !message.includes(' ') && translations[message]) {
+        translatedMessage = translations[message];
+    }
+    
     chrome.runtime.sendMessage({
         type: 'log',
-        message: message,
+        message: translatedMessage,
         logType: logType
     }).catch(() => {});
 }
@@ -918,5 +931,5 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
 // Manter service worker ativo
 setInterval(() => {
-    log('debug', 'Service worker ativo');
+    log('debug', t('logServiceWorkerActive'));
 }, 20000); // Ping a cada 20 segundos

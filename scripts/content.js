@@ -115,11 +115,11 @@ async function processCards() {
         }
         
         // Aguardar carregamento
-        sendLog('⏳ Aguardando carregamento...', 'info');
+        sendLog('logWaitingLoad', 'info');
         await sleep(3000);
         
         // Rolagens para forçar lazy-load (como no Python)
-        sendLog('📜 Scroll para carregar cards...', 'info');
+        sendLog('logScrollCards', 'info');
         for (const y of [400, 800, 1200]) {
             window.scrollTo(0, y);
             await sleep(400);

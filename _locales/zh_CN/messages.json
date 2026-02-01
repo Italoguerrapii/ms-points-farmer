@@ -127,6 +127,34 @@
     "message": "等待 {0}秒...",
     "description": "等待延迟日志"
   },
+  "logServiceWorkerActive": {
+    "message": "Service worker 已激活",
+    "description": "Service worker激活日志"
+  },
+  "logSendingMessage": {
+    "message": "正在发送消息到标签页",
+    "description": "发送消息日志"
+  },
+  "logWaitingLoad": {
+    "message": "⏳ 等待加载...",
+    "description": "等待加载日志"
+  },
+  "logScrollCards": {
+    "message": "📜 滚动加载卡片...",
+    "description": "滚动卡片日志"
+  },
+  "logCardsResult": {
+    "message": "卡片: 找到{0}个, 处理{1}个, 已完成{2}个",
+    "description": "卡片结果日志"
+  },
+  "logAutomationCompleteSuccess": {
+    "message": "🎉 自动化成功完成！",
+    "description": "自动化完成成功日志"
+  },
+  "notifAutomationComplete": {
+    "message": "🎉 自动化完成！",
+    "description": "通知标题"
+  },
   "statDesktop": {
     "message": "桌面",
     "description": "桌面标签"
