@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Microsoft Rewards Bot</title>
+    <title>Rewards Tracker</title>
     <link rel="stylesheet" href="styles/popup.css">
 </head>
 <body>
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>🏆 Microsoft Rewards Bot</h1>
-            <p class="subtitle">v1.0.0 - by Italo Guerra</p>
+            <h1>🏆 Rewards Tracker</h1>
+            <p class="subtitle">v1.0.0</p>
         </div>
 
         <!-- Status -->
         <div class="status-card" id="statusCard">
             <div class="status-indicator" id="statusIndicator">
                 <span class="status-dot"></span>
-                <span id="statusText">Aguardando...</span>
+                <span id="statusText">Ready</span>
             </div>
             <div class="progress-bar" id="progressBar" style="display: none;">
                 <div class="progress-fill" id="progressFill"></div>
@@ -30,101 +30,98 @@
             <div class="stat-card">
                 <div class="stat-icon">🖥️</div>
                 <div class="stat-info">
-                    <span class="stat-label">Buscas PC</span>
+                    <span class="stat-label">Desktop</span>
                     <span class="stat-value" id="statPC">0/45</span>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">📱</div>
                 <div class="stat-info">
-                    <span class="stat-label">Buscas Mobile</span>
+                    <span class="stat-label">Mobile</span>
                     <span class="stat-value" id="statMobile">0/35</span>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">🎯</div>
                 <div class="stat-info">
-                    <span class="stat-label">Cards Diários</span>
+                    <span class="stat-label">Daily Sets</span>
                     <span class="stat-value" id="statCards">0</span>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">⭐</div>
                 <div class="stat-info">
-                    <span class="stat-label">Pontos Hoje</span>
+                    <span class="stat-label">Points Today</span>
                     <span class="stat-value" id="statPoints">0</span>
                 </div>
             </div>
         </div>
 
-        <!-- Controles -->
+        <!-- Controls -->
         <div class="controls">
             <button id="btnStart" class="btn btn-primary">
                 <span class="btn-icon">▶️</span>
-                Iniciar Automação Completa
+                Start All Tasks
             </button>
             <button id="btnStop" class="btn btn-secondary" style="display: none;">
                 <span class="btn-icon">⏹️</span>
-                Parar
+                Stop
             </button>
         </div>
 
-        <!-- Botões Separados -->
+        <!-- Quick Actions -->
         <div class="controls-split">
             <button id="btnDesktop" class="btn btn-desktop">
                 <span class="btn-icon">🖥️</span>
-                Desktop (45)
+                Desktop
             </button>
             <button id="btnMobile" class="btn btn-mobile">
                 <span class="btn-icon">📱</span>
-                Mobile (35)
+                Mobile
             </button>
             <button id="btnCards" class="btn btn-cards">
                 <span class="btn-icon">🎯</span>
-                Cards
+                Daily
             </button>
         </div>
 
-        <!-- Opções -->
+        <!-- Settings -->
         <div class="options">
-            <h3>⚙️ Opções</h3>
+            <h3>⚙️ Settings</h3>
             <label class="checkbox-label">
                 <input type="checkbox" id="optPC" checked>
-                <span>Buscas Desktop (45)</span>
+                <span>Desktop searches</span>
             </label>
             <label class="checkbox-label">
                 <input type="checkbox" id="optMobile" checked>
-                <span>Buscas Mobile (35)</span>
+                <span>Mobile searches</span>
             </label>
             <label class="checkbox-label">
                 <input type="checkbox" id="optCards" checked>
-                <span>Cards Diários</span>
+                <span>Daily activities</span>
             </label>
             <label class="checkbox-label">
                 <input type="checkbox" id="optSchedule">
-                <span>Executar automaticamente às 10:00</span>
+                <span>Daily reminder at 10:00 AM</span>
             </label>
         </div>
 
-        <!-- Log -->
+        <!-- Activity Log -->
         <div class="log-section">
-            <h3>📋 Log de Atividades</h3>
+            <h3>📋 Activity Log</h3>
             <div class="log-container" id="logContainer">
-                <div class="log-entry">Aguardando início...</div>
+                <div class="log-entry">Waiting to start...</div>
             </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
-            <a href="https://github.com/Italoguerrapii" target="_blank">GitHub</a>
+            <a href="https://rewards.bing.com" target="_blank">Open Rewards</a>
             <span>|</span>
-            <a href="debug.html" target="_blank" id="btnDebug">🔍 Debug Logs</a>
-            <span>|</span>
-            <span class="warning">⚠️ Uso educacional</span>
+            <span>v1.0.0</span>
         </div>
     </div>
 
-    <script src="scripts/logger.js"></script>
     <script src="scripts/popup.js"></script>
 </body>
 </html>

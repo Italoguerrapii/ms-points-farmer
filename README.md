@@ -1,6 +1,6 @@
-# MS Points Farmer 🎯
+# Rewards Tracker & Helper 🎯
 
-A browser extension to help you earn Microsoft Rewards points more efficiently.
+A browser extension to track and manage your Microsoft Rewards activities.
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -8,20 +8,21 @@ A browser extension to help you earn Microsoft Rewards points more efficiently.
 
 ## ✨ Features
 
-- 🖥️ **Desktop Searches** - Perform 45 daily Bing searches
-- 📱 **Mobile Searches** - Perform 35 mobile searches with User-Agent spoofing
-- 🎴 **Daily Cards** - Complete daily activities automatically
-- ⏱️ **Human-like Delays** - Random delays between actions to avoid detection
-- 📊 **Progress Tracking** - Real-time statistics and logs
-- 🔔 **Notifications** - Get notified when tasks are completed
-
-## 📸 Screenshot
-
-![MS Points Farmer](icons/icon128.png)
+- 📊 **Progress Dashboard** - Track your daily rewards progress
+- 🎴 **Activity Manager** - View and manage daily activities
+- 🔔 **Smart Reminders** - Never miss your daily rewards
+- 📱 **Multi-device Support** - Works on desktop and mobile views
+- 📈 **Statistics** - Monitor your points over time
 
 ## 📥 Installation
 
-### From Source (Developer Mode)
+### From Chrome Web Store
+Coming soon!
+
+### From Microsoft Edge Add-ons
+Coming soon!
+
+### Manual Installation (Developer Mode)
 
 1. Download or clone this repository
 2. Open your browser's extension page:
@@ -31,44 +32,25 @@ A browser extension to help you earn Microsoft Rewards points more efficiently.
 4. Click "Load unpacked"
 5. Select the extension folder
 
-### From Store (Coming Soon)
-
-- Microsoft Edge Add-ons Store
-- Chrome Web Store
-
 ## 🚀 Usage
 
 1. Click the extension icon in your browser toolbar
-2. Make sure you're logged into your Microsoft account
-3. Choose what you want to run:
-   - **Desktop** - Run 45 desktop searches
-   - **Mobile** - Run 35 mobile searches  
-   - **Cards** - Complete daily cards/activities
-4. Watch the progress in the popup
-
-## ⚙️ How It Works
-
-- **Search Terms**: Uses an elaborate system with 2.9 billion+ unique search combinations
-- **Human Behavior**: Random delays (8-15 seconds) between searches with pauses every 5 searches
-- **Mobile Emulation**: Spoofs User-Agent to simulate iPhone for mobile searches
-- **Smart Detection**: Automatically skips already completed cards
+2. Sign in to your Microsoft Rewards account
+3. View your current progress and available activities
+4. Use the quick actions to navigate to rewards pages
 
 ## 📋 Requirements
 
 - Microsoft Edge or Google Chrome browser
 - Microsoft Rewards account
-- Logged into Bing/Microsoft
 
-## 🔧 Technical Details
+## 🔒 Privacy
 
-- **Manifest Version**: V3 (latest)
-- **Service Worker**: Background script runs independently
-- **Content Scripts**: Injected into Bing/Microsoft pages
-- **Permissions**: Storage, Tabs, Scripting, Notifications
-
-## ⚠️ Disclaimer
-
-This extension is for educational purposes only. Use at your own risk. The developer is not responsible for any account bans or violations of Microsoft's Terms of Service.
+This extension:
+- Does NOT collect any personal data
+- Does NOT store your credentials
+- Only works on Microsoft Rewards pages
+- All data stays in your browser
 
 ## 👨‍💻 Author
 
@@ -81,4 +63,4 @@ MIT License - feel free to use and modify.
 
 ---
 
-⭐ If you find this useful, please star the repository!
+⭐ If you find this useful, please leave a review!

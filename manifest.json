@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "MS Points Farmer",
+  "name": "Rewards Tracker & Helper",
   "version": "1.0.0",
-  "description": "Earn Microsoft Rewards points easily - Searches and daily activities helper",
+  "description": "Track your Microsoft Rewards progress and manage daily activities efficiently",
   "permissions": [
     "storage",
     "alarms",
