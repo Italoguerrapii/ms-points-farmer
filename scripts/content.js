@@ -1,6 +1,12 @@
 // Content Script - Executa na página do Bing/Microsoft Rewards
 // Desenvolvido por Italo Guerra
 
+// Guard against re-injection
+if (typeof window.__REWARDS_CONTENT_LOADED__ !== 'undefined') {
+    console.log('🤖 Content script já carregado, ignorando re-injeção');
+} else {
+    window.__REWARDS_CONTENT_LOADED__ = true;
+
 console.log('🤖 ===================================');
 console.log('🤖 MICROSOFT REWARDS BOT - CONTENT SCRIPT');
 console.log('🤖 URL:', window.location.href);
@@ -28,7 +34,7 @@ if (typeof CONFIG === 'undefined') {
 }
 
 // Configurações locais do content script
-const CONTENT_CONFIG = {
+var CONTENT_CONFIG = {
     searchDelay: { min: 3000, max: 6000 },
     clickDelay: { min: 1000, max: 2000 },
     scrollDelay: 500,
@@ -466,3 +472,5 @@ function updateStats(stats) {
 
 // Inicialização
 console.log('🤖 Content script pronto para receber comandos');
+
+} // End of guard block
