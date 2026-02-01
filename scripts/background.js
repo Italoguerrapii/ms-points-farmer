@@ -121,7 +121,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             // Content script notificou que está pronto
             if (sender.tab) {
                 contentScriptsReady[sender.tab.id] = true;
-                log('success', '✅ Content script registrado', { tabId: sender.tab.id, url: message.url });
+                log('success', t('logContentScriptRegistered'), { tabId: sender.tab.id, url: message.url });
             }
             sendResponse({ success: true });
             break;

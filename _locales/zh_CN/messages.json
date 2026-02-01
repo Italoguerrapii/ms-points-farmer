@@ -155,6 +155,18 @@
     "message": "🎉 自动化完成！",
     "description": "通知标题"
   },
+  "logContentScriptRegistered": {
+    "message": "✅ Content script 已注册",
+    "description": "Content script注册日志"
+  },
+  "logSearchingCards": {
+    "message": "🔍 正在搜索卡片...",
+    "description": "搜索卡片日志"
+  },
+  "logWaiting5Seconds": {
+    "message": "等待5秒...",
+    "description": "等待5秒日志"
+  },
   "statDesktop": {
     "message": "桌面",
     "description": "桌面标签"

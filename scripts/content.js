@@ -131,10 +131,10 @@ async function processCards() {
         
         // SELETOR CORRETO DO PROJETO PYTHON: a.ds-card-sec
         console.log('🤖 [CONTENT] Buscando cards...');
-        sendLog('🔍 Buscando cards...', 'info');
+        sendLog('logSearchingCards', 'info');
         const cards = document.querySelectorAll('a.ds-card-sec');
         console.log('🤖 [CONTENT] Cards encontrados:', cards.length);
-        sendLog(`📋 ${cards.length} cards encontrados`, 'info');
+        sendLog(`📋 ${cards.length} cards`, 'info');
         
         // Se não encontrou com o seletor principal, tentar outros
         if (cards.length === 0) {

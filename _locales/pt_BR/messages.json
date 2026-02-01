@@ -155,6 +155,18 @@
     "message": "🎉 Automação Concluída!",
     "description": "Título notificação"
   },
+  "logContentScriptRegistered": {
+    "message": "✅ Content script registrado",
+    "description": "Log content script registrado"
+  },
+  "logSearchingCards": {
+    "message": "🔍 Buscando cards...",
+    "description": "Log buscando cards"
+  },
+  "logWaiting5Seconds": {
+    "message": "Aguardando 5 segundos...",
+    "description": "Log aguardando 5 segundos"
+  },
   "statDesktop": {
     "message": "Desktop",
     "description": "Label desktop"
