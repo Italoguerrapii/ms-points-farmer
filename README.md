@@ -13,11 +13,11 @@
 
 Uma **extensão de navegador** que automatiza a coleta de pontos do **Microsoft Rewards** fazendo:
 
-- ✅ **45 buscas Desktop** automaticamente
-- ✅ **35 buscas Mobile** (com User-Agent spoofing)
+- ✅ **Buscas Desktop** automaticamente
+- ✅ **Buscas Mobile** (com User-Agent spoofing)
 - ✅ **Cards diários** (daily sets, quizzes, polls)
 - ✅ **Delays humanizados** para evitar detecção
-- ✅ **+300 pontos por dia** sem esforço!
+- ✅ **~150-200 pontos por dia** sem esforço!
 
 ---
 
@@ -138,16 +138,18 @@ A extensão usa várias técnicas para evitar banimento:
 
 ---
 
-## 📊 Pontos por Dia
+## 📊 Pontos por Dia (Nível 2)
 
 | Atividade | Pontos |
 |-----------|--------|
-| 45 buscas Desktop | ~150 |
-| 35 buscas Mobile | ~100 |
-| 3 cards diários | ~30-90 |
-| **TOTAL** | **~280-340** |
+| 30 buscas Desktop | ~90 |
+| 20 buscas Mobile | ~60 |
+| Cards diários | ~30-50 |
+| **TOTAL** | **~150-200** |
 
-**Por mês:** ~8.400-10.200 pontos 🎉
+**Por mês:** ~4.500-6.000 pontos 🎉
+
+> ⚠️ Os pontos variam conforme seu nível e região. Valores baseados no Brasil, Nível 2.
 
 ---
 
