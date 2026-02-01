@@ -1,0 +1,90 @@
+{
+  "extName": {
+    "message": "Rewards Tracker & Helper",
+    "description": "Nome da extensão"
+  },
+  "extDescription": {
+    "message": "Acompanhe seu progresso no Microsoft Rewards e gerencie atividades diárias com eficiência",
+    "description": "Descrição da extensão"
+  },
+  "title": {
+    "message": "Rewards Tracker",
+    "description": "Título do popup"
+  },
+  "statusReady": {
+    "message": "Pronto",
+    "description": "Status quando pronto"
+  },
+  "statDesktop": {
+    "message": "Desktop",
+    "description": "Label desktop"
+  },
+  "statMobile": {
+    "message": "Mobile",
+    "description": "Label mobile"
+  },
+  "statDaily": {
+    "message": "Cards Diários",
+    "description": "Label cards diários"
+  },
+  "statPoints": {
+    "message": "Pontos Hoje",
+    "description": "Label pontos"
+  },
+  "btnStartAll": {
+    "message": "Iniciar Todas Tarefas",
+    "description": "Botão iniciar tudo"
+  },
+  "btnStop": {
+    "message": "Parar",
+    "description": "Botão parar"
+  },
+  "btnDesktop": {
+    "message": "Desktop",
+    "description": "Botão desktop"
+  },
+  "btnMobile": {
+    "message": "Mobile",
+    "description": "Botão mobile"
+  },
+  "btnDaily": {
+    "message": "Diário",
+    "description": "Botão diário"
+  },
+  "settings": {
+    "message": "Configurações",
+    "description": "Título configurações"
+  },
+  "optDesktop": {
+    "message": "Buscas Desktop",
+    "description": "Opção desktop"
+  },
+  "optMobile": {
+    "message": "Buscas Mobile",
+    "description": "Opção mobile"
+  },
+  "optDaily": {
+    "message": "Atividades diárias",
+    "description": "Opção diário"
+  },
+  "optReminder": {
+    "message": "Lembrete diário às 10:00",
+    "description": "Opção lembrete"
+  },
+  "activityLog": {
+    "message": "Log de Atividades",
+    "description": "Título log"
+  },
+  "logWaiting": {
+    "message": "Aguardando início...",
+    "description": "Mensagem aguardando"
+  },
+  "linkRewards": {
+    "message": "Abrir Rewards",
+    "description": "Link abrir rewards"
+  },
+  "disclaimer": {
+    "message": "Apenas para fins educacionais. Não afiliado à Microsoft. Use por sua conta e risco. O desenvolvedor não se responsabiliza por quaisquer consequências.",
+    "description": "Texto de aviso"
+  }
+}

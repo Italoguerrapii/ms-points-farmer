@@ -2,12 +2,16 @@
 
 > **Automatize a coleta de pontos do Microsoft Rewards com esta extensão para Chrome/Edge!**
 
+**🇧🇷 Português** | [🇺🇸 English](#english) | [🇨🇳 中文](#中文)
+
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Platform](https://img.shields.io/badge/platform-Chrome%20%7C%20Edge-brightgreen)
 ![Stars](https://img.shields.io/github/stars/Italoguerrapii/ms-points-farmer?style=social)
 
 ---
+
+## 🇧🇷 PORTUGUÊS
 
 ## 🔥 O que é?
 
@@ -228,4 +232,151 @@ MIT License - Sinta-se livre para usar e modificar.
   <br>
   <br>
   <a href="https://github.com/Italoguerrapii/ms-points-farmer">⭐ Star este repo se foi útil!</a>
+</p>
+
+---
+
+## <a id="english"></a>🇺🇸 ENGLISH
+
+## 🔥 What is it?
+
+A **browser extension** that automates **Microsoft Rewards** points collection by:
+
+- ✅ **Desktop searches** automatically
+- ✅ **Mobile searches** (with User-Agent spoofing)
+- ✅ **Daily cards** (daily sets, quizzes, polls)
+- ✅ **Humanized delays** to avoid detection
+- ✅ **~150-200 points per day** effortlessly!
+
+## 🚀 Installation (2 minutes)
+
+### Step 1: Download
+
+```bash
+git clone https://github.com/Italoguerrapii/ms-points-farmer.git
+```
+
+**Or** click **[Code] → [Download ZIP]** and extract.
+
+### Step 2: Install in Browser
+
+#### Microsoft Edge:
+1. Open `edge://extensions`
+2. Enable **"Developer mode"** (bottom left)
+3. Click **"Load unpacked"**
+4. Select the `ms-points-farmer` folder
+
+#### Google Chrome:
+1. Open `chrome://extensions`
+2. Enable **"Developer mode"** (top right)
+3. Click **"Load unpacked"**
+4. Select the `ms-points-farmer` folder
+
+### Step 3: Use
+
+1. **Log in** to https://rewards.bing.com
+2. Click the **extension icon** 🏆
+3. Click **"Start All Tasks"** or choose individually:
+   - 🖥️ **Desktop** - Desktop searches
+   - 📱 **Mobile** - Mobile searches
+   - 🎯 **Daily** - Daily cards
+
+## 📊 Points per Day (Level 2)
+
+| Activity | Points |
+|----------|--------|
+| 30 Desktop searches | ~90 |
+| 20 Mobile searches | ~60 |
+| Daily cards | ~30-50 |
+| **TOTAL** | **~150-200** |
+
+**Per month:** ~4,500-6,000 points 🎉
+
+## ⚠️ Disclaimer
+
+```
+This project is for EDUCATIONAL PURPOSES ONLY.
+
+- NOT affiliated with Microsoft Corporation
+- Usage may violate Microsoft's Terms of Service
+- Developer assumes NO responsibility for suspensions or bans
+- Use ENTIRELY at your own risk
+```
+
+---
+
+## <a id="中文"></a>🇨🇳 中文
+
+## 🔥 这是什么？
+
+一个**浏览器扩展**，通过以下方式自动收集**Microsoft Rewards**积分：
+
+- ✅ **桌面搜索** 自动执行
+- ✅ **移动搜索** （User-Agent伪装）
+- ✅ **每日卡片** （每日任务、测验、投票）
+- ✅ **人性化延迟** 避免检测
+- ✅ **每天约150-200积分** 轻松获得！
+
+## 🚀 安装（2分钟）
+
+### 步骤1：下载
+
+```bash
+git clone https://github.com/Italoguerrapii/ms-points-farmer.git
+```
+
+**或者** 点击 **[Code] → [Download ZIP]** 并解压。
+
+### 步骤2：在浏览器中安装
+
+#### Microsoft Edge：
+1. 打开 `edge://extensions`
+2. 启用 **"开发者模式"** （左下角）
+3. 点击 **"加载解压缩的扩展"**
+4. 选择 `ms-points-farmer` 文件夹
+
+#### Google Chrome：
+1. 打开 `chrome://extensions`
+2. 启用 **"开发者模式"** （右上角）
+3. 点击 **"加载已解压的扩展程序"**
+4. 选择 `ms-points-farmer` 文件夹
+
+### 步骤3：使用
+
+1. **登录** https://rewards.bing.com
+2. 点击 **扩展图标** 🏆
+3. 点击 **"开始所有任务"** 或单独选择：
+   - 🖥️ **桌面** - 桌面搜索
+   - 📱 **移动** - 移动搜索
+   - 🎯 **每日** - 每日卡片
+
+## 📊 每日积分（等级2）
+
+| 活动 | 积分 |
+|------|------|
+| 30次桌面搜索 | ~90 |
+| 20次移动搜索 | ~60 |
+| 每日卡片 | ~30-50 |
+| **总计** | **~150-200** |
+
+**每月：** ~4,500-6,000积分 🎉
+
+## ⚠️ 免责声明
+
+```
+本项目仅供教育目的。
+
+- 与Microsoft Corporation无关
+- 使用可能违反Microsoft服务条款
+- 开发者不承担任何责任
+- 使用风险自负
+```
+
+---
+
+<p align="center">
+  <b>Made with ❤️ by <a href="https://github.com/Italoguerrapii">Italo Guerra</a></b>
+  <br>
+  <br>
+  <a href="https://github.com/Italoguerrapii/ms-points-farmer">⭐ Star if useful!</a>
 </p>

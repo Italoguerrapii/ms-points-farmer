@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Rewards Tracker & Helper",
+  "name": "__MSG_extName__",
   "version": "1.0.0",
-  "description": "Track your Microsoft Rewards progress and manage daily activities efficiently",
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
   "permissions": [
     "storage",
     "alarms",

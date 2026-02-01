@@ -1,0 +1,90 @@
+{
+  "extName": {
+    "message": "Rewards Tracker & Helper",
+    "description": "扩展名称"
+  },
+  "extDescription": {
+    "message": "跟踪您的Microsoft Rewards进度并高效管理每日活动",
+    "description": "扩展描述"
+  },
+  "title": {
+    "message": "Rewards Tracker",
+    "description": "弹出窗口标题"
+  },
+  "statusReady": {
+    "message": "准备就绪",
+    "description": "准备就绪状态"
+  },
+  "statDesktop": {
+    "message": "桌面",
+    "description": "桌面标签"
+  },
+  "statMobile": {
+    "message": "移动",
+    "description": "移动标签"
+  },
+  "statDaily": {
+    "message": "每日任务",
+    "description": "每日任务标签"
+  },
+  "statPoints": {
+    "message": "今日积分",
+    "description": "积分标签"
+  },
+  "btnStartAll": {
+    "message": "开始所有任务",
+    "description": "开始所有按钮"
+  },
+  "btnStop": {
+    "message": "停止",
+    "description": "停止按钮"
+  },
+  "btnDesktop": {
+    "message": "桌面",
+    "description": "桌面按钮"
+  },
+  "btnMobile": {
+    "message": "移动",
+    "description": "移动按钮"
+  },
+  "btnDaily": {
+    "message": "每日",
+    "description": "每日按钮"
+  },
+  "settings": {
+    "message": "设置",
+    "description": "设置标题"
+  },
+  "optDesktop": {
+    "message": "桌面搜索",
+    "description": "桌面选项"
+  },
+  "optMobile": {
+    "message": "移动搜索",
+    "description": "移动选项"
+  },
+  "optDaily": {
+    "message": "每日活动",
+    "description": "每日选项"
+  },
+  "optReminder": {
+    "message": "每日上午10:00提醒",
+    "description": "提醒选项"
+  },
+  "activityLog": {
+    "message": "活动日志",
+    "description": "日志标题"
+  },
+  "logWaiting": {
+    "message": "等待开始...",
+    "description": "等待消息"
+  },
+  "linkRewards": {
+    "message": "打开Rewards",
+    "description": "打开rewards链接"
+  },
+  "disclaimer": {
+    "message": "仅供教育目的。与Microsoft无关。使用风险自负。开发者不承担任何责任。",
+    "description": "免责声明文本"
+  }
+}

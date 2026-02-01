@@ -1,0 +1,90 @@
+{
+  "extName": {
+    "message": "Rewards Tracker & Helper",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Track your Microsoft Rewards progress and manage daily activities efficiently",
+    "description": "Extension description"
+  },
+  "title": {
+    "message": "Rewards Tracker",
+    "description": "Popup title"
+  },
+  "statusReady": {
+    "message": "Ready",
+    "description": "Status when ready"
+  },
+  "statDesktop": {
+    "message": "Desktop",
+    "description": "Desktop label"
+  },
+  "statMobile": {
+    "message": "Mobile",
+    "description": "Mobile label"
+  },
+  "statDaily": {
+    "message": "Daily Sets",
+    "description": "Daily sets label"
+  },
+  "statPoints": {
+    "message": "Points Today",
+    "description": "Points label"
+  },
+  "btnStartAll": {
+    "message": "Start All Tasks",
+    "description": "Start all button"
+  },
+  "btnStop": {
+    "message": "Stop",
+    "description": "Stop button"
+  },
+  "btnDesktop": {
+    "message": "Desktop",
+    "description": "Desktop button"
+  },
+  "btnMobile": {
+    "message": "Mobile",
+    "description": "Mobile button"
+  },
+  "btnDaily": {
+    "message": "Daily",
+    "description": "Daily button"
+  },
+  "settings": {
+    "message": "Settings",
+    "description": "Settings title"
+  },
+  "optDesktop": {
+    "message": "Desktop searches",
+    "description": "Desktop option"
+  },
+  "optMobile": {
+    "message": "Mobile searches",
+    "description": "Mobile option"
+  },
+  "optDaily": {
+    "message": "Daily activities",
+    "description": "Daily option"
+  },
+  "optReminder": {
+    "message": "Daily reminder at 10:00 AM",
+    "description": "Reminder option"
+  },
+  "activityLog": {
+    "message": "Activity Log",
+    "description": "Activity log title"
+  },
+  "logWaiting": {
+    "message": "Waiting to start...",
+    "description": "Log waiting message"
+  },
+  "linkRewards": {
+    "message": "Open Rewards",
+    "description": "Open rewards link"
+  },
+  "disclaimer": {
+    "message": "For educational purposes only. Not affiliated with Microsoft. Use at your own risk. The developer is not responsible for any consequences.",
+    "description": "Disclaimer text"
+  }
+}

@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rewards Tracker</title>
+    <title data-i18n="title">Rewards Tracker</title>
     <link rel="stylesheet" href="styles/popup.css">
+    <script src="scripts/i18n.js"></script>
 </head>
 <body>
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>🏆 Rewards Tracker</h1>
+            <h1 data-i18n="title">🏆 Rewards Tracker</h1>
             <p class="subtitle">v1.0.0</p>
         </div>
 
@@ -18,7 +19,7 @@
         <div class="status-card" id="statusCard">
             <div class="status-indicator" id="statusIndicator">
                 <span class="status-dot"></span>
-                <span id="statusText">Ready</span>
+                <span id="statusText" data-i18n="statusReady">Ready</span>
             </div>
             <div class="progress-bar" id="progressBar" style="display: none;">
                 <div class="progress-fill" id="progressFill"></div>
@@ -30,28 +31,28 @@
             <div class="stat-card">
                 <div class="stat-icon">🖥️</div>
                 <div class="stat-info">
-                    <span class="stat-label">Desktop</span>
+                    <span class="stat-label" data-i18n="statDesktop">Desktop</span>
                     <span class="stat-value" id="statPC">0/45</span>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">📱</div>
                 <div class="stat-info">
-                    <span class="stat-label">Mobile</span>
+                    <span class="stat-label" data-i18n="statMobile">Mobile</span>
                     <span class="stat-value" id="statMobile">0/35</span>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">🎯</div>
                 <div class="stat-info">
-                    <span class="stat-label">Daily Sets</span>
+                    <span class="stat-label" data-i18n="statDaily">Daily Sets</span>
                     <span class="stat-value" id="statCards">0</span>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">⭐</div>
                 <div class="stat-info">
-                    <span class="stat-label">Points Today</span>
+                    <span class="stat-label" data-i18n="statPoints">Points Today</span>
                     <span class="stat-value" id="statPoints">0</span>
                 </div>
             </div>
@@ -61,11 +62,11 @@
         <div class="controls">
             <button id="btnStart" class="btn btn-primary">
                 <span class="btn-icon">▶️</span>
-                Start All Tasks
+                <span data-i18n="btnStartAll">Start All Tasks</span>
             </button>
             <button id="btnStop" class="btn btn-secondary" style="display: none;">
                 <span class="btn-icon">⏹️</span>
-                Stop
+                <span data-i18n="btnStop">Stop</span>
             </button>
         </div>
 
@@ -73,50 +74,50 @@
         <div class="controls-split">
             <button id="btnDesktop" class="btn btn-desktop">
                 <span class="btn-icon">🖥️</span>
-                Desktop
+                <span data-i18n="btnDesktop">Desktop</span>
             </button>
             <button id="btnMobile" class="btn btn-mobile">
                 <span class="btn-icon">📱</span>
-                Mobile
+                <span data-i18n="btnMobile">Mobile</span>
             </button>
             <button id="btnCards" class="btn btn-cards">
                 <span class="btn-icon">🎯</span>
-                Daily
+                <span data-i18n="btnDaily">Daily</span>
             </button>
         </div>
 
         <!-- Settings -->
         <div class="options">
-            <h3>⚙️ Settings</h3>
+            <h3>⚙️ <span data-i18n="settings">Settings</span></h3>
             <label class="checkbox-label">
                 <input type="checkbox" id="optPC" checked>
-                <span>Desktop searches</span>
+                <span data-i18n="optDesktop">Desktop searches</span>
             </label>
             <label class="checkbox-label">
                 <input type="checkbox" id="optMobile" checked>
-                <span>Mobile searches</span>
+                <span data-i18n="optMobile">Mobile searches</span>
             </label>
             <label class="checkbox-label">
                 <input type="checkbox" id="optCards" checked>
-                <span>Daily activities</span>
+                <span data-i18n="optDaily">Daily activities</span>
             </label>
             <label class="checkbox-label">
                 <input type="checkbox" id="optSchedule">
-                <span>Daily reminder at 10:00 AM</span>
+                <span data-i18n="optReminder">Daily reminder at 10:00 AM</span>
             </label>
         </div>
 
         <!-- Activity Log -->
         <div class="log-section">
-            <h3>📋 Activity Log</h3>
+            <h3>📋 <span data-i18n="activityLog">Activity Log</span></h3>
             <div class="log-container" id="logContainer">
-                <div class="log-entry">Waiting to start...</div>
+                <div class="log-entry" data-i18n="logWaiting">Waiting to start...</div>
             </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
-            <a href="https://rewards.bing.com" target="_blank">Open Rewards</a>
+            <a href="https://rewards.bing.com" target="_blank" data-i18n="linkRewards">Open Rewards</a>
             <span>|</span>
             <a href="https://github.com/Italoguerrapii" target="_blank">@Italoguerrapii</a>
             <span>|</span>
@@ -124,7 +125,7 @@
         </div>
         
         <!-- Disclaimer -->
-        <div class="disclaimer">
+        <div class="disclaimer" data-i18n="disclaimer">
             ⚠️ For educational purposes only. Not affiliated with Microsoft.
             Use at your own risk. The developer is not responsible for any consequences.
         </div>
