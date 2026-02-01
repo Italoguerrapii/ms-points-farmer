@@ -54,8 +54,10 @@
   "settings": {
     "message": "设置",
     "description": "设置标题"
-  },
-  "optDesktop": {
+  },  "selectLanguage": {
+    "message": "🌐 语言",
+    "description": "语言选择器标签"
+  },  "optDesktop": {
     "message": "桌面搜索",
     "description": "桌面选项"
   },

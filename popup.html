@@ -89,6 +89,19 @@
         <!-- Settings -->
         <div class="options">
             <h3>⚙️ <span data-i18n="settings">Settings</span></h3>
+            
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <label for="languageSelect">
+                    <span data-i18n="selectLanguage">🌐 Language</span>
+                </label>
+                <select id="languageSelect" class="language-select">
+                    <option value="en">English</option>
+                    <option value="pt_BR">Português (BR)</option>
+                    <option value="zh_CN">中文 (简体)</option>
+                </select>
+            </div>
+            
             <label class="checkbox-label">
                 <input type="checkbox" id="optPC" checked>
                 <span data-i18n="optDesktop">Desktop searches</span>

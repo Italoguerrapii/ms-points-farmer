@@ -91,21 +91,33 @@ git clone https://github.com/Italoguerrapii/ms-points-farmer.git
 
 ## 📖 Como Funciona
 
-### 🖥️ Buscas Desktop (45 buscas = 150 pontos)
-- Gera termos de busca aleatórios com **2.9 bilhões de combinações**
-- Delay de **8-15 segundos** entre buscas (humanizado)
+### 🖥️ Buscas Desktop (45 buscas → 90 pontos garantidos)
+- Microsoft Rewards dá **3 pontos** por busca (máximo 30 buscas/dia = 90 pontos)
+- A extensão faz **45 buscas** (15 extras) para garantir que você atinja o máximo
+- **Por quê?** Algumas buscas podem não pontuar (cache, duplicadas, etc.)
+- Delay de **8-15 segundos** entre buscas (comportamento humanizado)
 - Pausa a cada **5 buscas** para simular comportamento real
 
-### 📱 Buscas Mobile (35 buscas = 100 pontos)
-- Usa **User-Agent spoofing** para simular iPhone
-- Inclui headers `Sec-CH-UA-Mobile` e `Sec-CH-UA-Platform`
+### 📱 Buscas Mobile (35 buscas → 60 pontos garantidos)
+- Microsoft Rewards dá **3 pontos** por busca mobile (máximo 20 buscas/dia = 60 pontos)
+- A extensão faz **35 buscas** (15 extras) para garantir que você atinja o máximo
+- **Por quê?** Margem de segurança caso algumas não pontuem
+- Usa **User-Agent spoofing** para simular iPhone iOS 17
+- Inclui headers realistas (`Sec-CH-UA-Mobile`, `Sec-CH-UA-Platform`)
 - Mesmos delays humanizados
 
-### 🎯 Cards Diários (3+ cards = 30-90 pontos)
-- Detecta automaticamente cards disponíveis
-- Pula cards já completados
-- Ignora cards de indicação/promoção
+### 🎯 Cards Diários (~10-50 pontos por card)
+- Detecta automaticamente cards disponíveis na página
+- Pula cards já completados (verifica ícone de check ✅)
+- Ignora cards de indicação/promoção (referral, Spotify, etc.)
 - Abre e fecha cada card automaticamente
+- Funciona com: quizzes, polls, atividades diárias
+
+### 🧠 Geração de Termos de Busca
+- Sistema elaborado com **2.9 bilhões de combinações** únicas
+- Palavras aleatórias de diversas categorias
+- Adiciona números aleatórios ocasionalmente
+- Nunca repete termos no mesmo dia
 
 ---
 
@@ -144,16 +156,22 @@ A extensão usa várias técnicas para evitar banimento:
 
 ## 📊 Pontos por Dia (Nível 2)
 
-| Atividade | Pontos |
-|-----------|--------|
-| 30 buscas Desktop | ~90 |
-| 20 buscas Mobile | ~60 |
-| Cards diários | ~30-50 |
-| **TOTAL** | **~150-200** |
+| Atividade | Buscas | Máximo de Pontos |
+|-----------|--------|------------------|
+| Desktop | 45 (30 contam) | ~90 |
+| Mobile | 35 (20 contam) | ~60 |
+| Cards diários | 2-5 cards | ~20-50 |
+| **TOTAL DIÁRIO** | **80 buscas** | **~150-200** |
 
 **Por mês:** ~4.500-6.000 pontos 🎉
 
-> ⚠️ Os pontos variam conforme seu nível e região. Valores baseados no Brasil, Nível 2.
+> ⚠️ **Por que fazer buscas extras?**
+> - A extensão faz 45 desktop e 35 mobile para **garantir** que você atinja o máximo
+> - Algumas buscas podem não pontuar (cache, duplicadas, muito rápidas)
+> - As extras são uma **margem de segurança** para garantir seus pontos
+> - Microsoft conta apenas as primeiras 30 desktop e 20 mobile que pontuarem
+
+> ℹ️ Os pontos variam conforme seu nível e região. Valores baseados no Brasil, Nível 2.
 
 ---
 
@@ -283,14 +301,20 @@ git clone https://github.com/Italoguerrapii/ms-points-farmer.git
 
 ## 📊 Points per Day (Level 2)
 
-| Activity | Points |
-|----------|--------|
-| 30 Desktop searches | ~90 |
-| 20 Mobile searches | ~60 |
-| Daily cards | ~30-50 |
-| **TOTAL** | **~150-200** |
+| Activity | Searches | Max Points |
+|----------|----------|------------|
+| Desktop | 45 (30 count) | ~90 |
+| Mobile | 35 (20 count) | ~60 |
+| Daily cards | 2-5 cards | ~20-50 |
+| **DAILY TOTAL** | **80 searches** | **~150-200** |
 
 **Per month:** ~4,500-6,000 points 🎉
+
+> ⚠️ **Why extra searches?**
+> - Extension performs 45 desktop + 35 mobile to **guarantee** you reach the maximum
+> - Some searches may not count (cache, duplicates, too fast)
+> - Extras are a **safety margin** to ensure your points
+> - Microsoft only counts the first 30 desktop and 20 mobile that score
 
 ## ⚠️ Disclaimer
 
@@ -352,14 +376,20 @@ git clone https://github.com/Italoguerrapii/ms-points-farmer.git
 
 ## 📊 每日积分（等级2）
 
-| 活动 | 积分 |
-|------|------|
-| 30次桌面搜索 | ~90 |
-| 20次移动搜索 | ~60 |
-| 每日卡片 | ~30-50 |
-| **总计** | **~150-200** |
+| 活动 | 搜索次数 | 最大积分 |
+|------|----------|----------|
+| 桌面 | 45次（30次计分） | ~90 |
+| 移动 | 35次（20次计分） | ~60 |
+| 每日卡片 | 2-5个卡片 | ~20-50 |
+| **每日总计** | **80次搜索** | **~150-200** |
 
 **每月：** ~4,500-6,000积分 🎉
+
+> ⚠️ **为什么要额外搜索？**
+> - 扩展执行45次桌面+35次移动搜索以**确保**达到最大值
+> - 某些搜索可能不计分（缓存、重复、速度太快）
+> - 额外搜索是**安全余量**以确保获得积分
+> - Microsoft只计算前30次桌面和20次移动的有效搜索
 
 ## ⚠️ 免责声明
 

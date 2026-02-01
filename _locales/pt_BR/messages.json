@@ -54,8 +54,10 @@
   "settings": {
     "message": "Configurações",
     "description": "Título configurações"
-  },
-  "optDesktop": {
+  },  "selectLanguage": {
+    "message": "🌐 Idioma",
+    "description": "Label do seletor de idioma"
+  },  "optDesktop": {
     "message": "Buscas Desktop",
     "description": "Opção desktop"
   },
