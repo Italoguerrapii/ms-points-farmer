@@ -7,6 +7,50 @@ let isRunning = false;
 let currentSettings = null;
 let automationTabId = null;
 let currentProgress = 0;
+let currentLang = 'en';
+let translations = {};
+
+// Carregar traduções
+async function loadTranslations() {
+    try {
+        const { userLanguage } = await chrome.storage.local.get('userLanguage');
+        const lang = userLanguage || chrome.i18n.getUILanguage().replace('-', '_');
+        
+        const langMap = {
+            'pt_BR': 'pt_BR', 'pt': 'pt_BR',
+            'zh_CN': 'zh_CN', 'zh': 'zh_CN',
+            'en': 'en'
+        };
+        currentLang = langMap[lang] || 'en';
+        
+        const url = chrome.runtime.getURL(`_locales/${currentLang}/messages.json`);
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        translations = {};
+        for (const [key, value] of Object.entries(data)) {
+            translations[key] = value.message;
+        }
+    } catch (e) {
+        console.error('Failed to load translations:', e);
+        translations = {};
+    }
+}
+
+// Função de tradução para o background
+function t(key) {
+    return translations[key] || chrome.i18n.getMessage(key) || key;
+}
+
+// Inicializar traduções
+loadTranslations();
+
+// Escutar mudanças de idioma
+chrome.storage.onChanged.addListener((changes) => {
+    if (changes.userLanguage) {
+        loadTranslations();
+    }
+});
 
 // Logger simples para background
 function log(level, message, data = null) {
@@ -36,7 +80,9 @@ function log(level, message, data = null) {
 
 // Instalação
 chrome.runtime.onInstalled.addListener(() => {
-    log('info', 'Microsoft Rewards Bot instalado!');
+    loadTranslations().then(() => {
+        log('info', t('logBotInstalled'));
+    });
     
     // Configurações padrão
     chrome.storage.local.set({
@@ -58,7 +104,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 // Listener de mensagens
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    log('debug', 'Mensagem recebida', { action: message.action });
+    log('debug', t('logMessageReceived'), { action: message.action });
     
     switch (message.action) {
         case 'startAutomation':
@@ -74,7 +120,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         case 'getStatus':
             sendResponse({ 
                 isRunning: isRunning,
-                status: isRunning ? 'Executando' : 'Aguardando',
+                status: isRunning ? t('statusRunning') : t('statusReady'),
                 progress: currentProgress
             });
             break;
@@ -135,8 +181,11 @@ async function startAutomation(settings) {
     currentSettings = settings;
     currentProgress = 0;
     
-    log('info', '🚀 Iniciando automação', settings);
-    sendLogToPopup('🚀 Iniciando automação...', 'info');
+    // Garantir traduções carregadas
+    await loadTranslations();
+    
+    log('info', t('logStartingAutomation'), settings);
+    sendLogToPopup(t('logStartingAutomation'), 'info');
     sendStatusToPopup('Iniciando...', 'running');
     
     try {
@@ -148,17 +197,17 @@ async function startAutomation(settings) {
         });
         
         automationTabId = tab.id;
-        log('success', '✅ Aba criada', { tabId: tab.id });
-        sendLogToPopup('🌐 Abrindo Bing Rewards...', 'info');
+        log('success', t('logTabCreated'), { tabId: tab.id });
+        sendLogToPopup(t('logOpeningRewards'), 'info');
         
         // Aguardar carregamento da página
-        log('debug', 'Aguardando página carregar...');
+        log('debug', t('logWaitingPageLoad'));
         await waitForTabLoad(tab.id);
-        log('debug', '✅ Página carregou');
+        log('debug', t('logPageLoaded'));
         
         // Aguardar tempo adicional para página renderizar
-        log('debug', 'Aguardando 5 segundos...');
-        sendLogToPopup('⏳ Aguardando página carregar...', 'info');
+        log('debug', t('logWaitingSeconds'));
+        sendLogToPopup(t('logWaitingPageLoad'), 'info');
         await new Promise(resolve => setTimeout(resolve, 5000));
         
         // Verificar se aba ainda existe
@@ -170,54 +219,54 @@ async function startAutomation(settings) {
         
         // O content script é injetado automaticamente pelo manifest
         // Vamos tentar fazer ping e aguardar ele ficar pronto
-        log('debug', 'Aguardando content script (injetado via manifest)...');
-        sendLogToPopup('⏳ Aguardando content script...', 'info');
+        log('debug', t('logWaitingContentScript'));
+        sendLogToPopup(t('logWaitingContentScript'), 'info');
         
         // Tentar ping várias vezes até o content script responder
         let contentScriptReady = false;
         for (let attempt = 1; attempt <= 10; attempt++) {
-            log('debug', `Tentativa ${attempt}/10 de contato com content script`);
+            log('debug', t('logContentScriptAttempt').replace('{0}', attempt));
             try {
                 const pingResponse = await chrome.tabs.sendMessage(tab.id, { action: 'ping' });
                 if (pingResponse && pingResponse.ready) {
-                    log('success', '✅ Content script respondeu!', pingResponse);
-                    sendLogToPopup('✅ Content script pronto!', 'success');
+                    log('success', t('logContentScriptReady'), pingResponse);
+                    sendLogToPopup(t('logContentScriptReady'), 'success');
                     contentScriptReady = true;
                     break;
                 }
             } catch (pingError) {
-                log('debug', `Tentativa ${attempt} falhou, aguardando...`);
+                log('debug', t('logAttemptFailed').replace('{0}', attempt));
             }
             await new Promise(resolve => setTimeout(resolve, 1000));
         }
         
         if (!contentScriptReady) {
             // Tentar injetar manualmente como fallback
-            log('warn', 'Content script não respondeu, tentando injetar manualmente...');
-            sendLogToPopup('⚠️ Injetando script manualmente...', 'info');
+            log('warn', t('logInjectingManually'));
+            sendLogToPopup(t('logInjectingManually'), 'info');
             
             try {
                 await chrome.scripting.executeScript({
                     target: { tabId: tab.id },
                     files: ['scripts/content.js']
                 });
-                log('debug', 'Script injetado manualmente');
+                log('debug', t('logScriptInjected'));
                 await new Promise(resolve => setTimeout(resolve, 2000));
                 
                 // Tentar ping novamente
                 const retryPing = await chrome.tabs.sendMessage(tab.id, { action: 'ping' });
                 if (retryPing && retryPing.ready) {
-                    log('success', '✅ Content script respondeu após injeção manual!');
-                    sendLogToPopup('✅ Content script pronto!', 'success');
+                    log('success', t('logContentScriptReady'));
+                    sendLogToPopup(t('logContentScriptReady'), 'success');
                     contentScriptReady = true;
                 }
             } catch (injectError) {
-                log('error', 'Falha ao injetar manualmente', injectError);
+                log('error', t('logInjectionFailed'), injectError);
             }
         }
         
         if (!contentScriptReady) {
-            throw new Error('Content script não está respondendo. Verifique se está logado no Microsoft Rewards.');
+            throw new Error(t('logContentScriptNotResponding'));
         }
         
         // Iniciar processo de automação
@@ -225,11 +274,11 @@ async function startAutomation(settings) {
         await executeAutomationSteps(tab.id, settings);
         
     } catch (error) {
-        log('error', '❌ Erro na automação', { 
+        log('error', t('logAutomationError'), { 
             message: error.message, 
             stack: error.stack 
         });
-        sendLogToPopup(`❌ Erro: ${error.message}`, 'error');
+        sendLogToPopup(`❌ ${error.message}`, 'error');
         sendErrorToPopup(error.message);
         
         // Notificação de erro

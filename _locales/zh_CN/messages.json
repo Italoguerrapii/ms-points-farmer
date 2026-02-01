@@ -15,6 +15,118 @@
     "message": "准备就绪",
     "description": "准备就绪状态"
   },
+  "statusRunning": {
+    "message": "运行中",
+    "description": "运行中状态"
+  },
+  "logBotInstalled": {
+    "message": "Microsoft Rewards Bot 已安装！",
+    "description": "Bot安装日志"
+  },
+  "logMessageReceived": {
+    "message": "消息已收到",
+    "description": "消息收到日志"
+  },
+  "logServiceWorkerActive": {
+    "message": "Service worker 已激活",
+    "description": "Service worker激活日志"
+  },
+  "logStartingAutomation": {
+    "message": "🚀 开始自动化",
+    "description": "开始自动化日志"
+  },
+  "logWaitingPageLoad": {
+    "message": "⏳ 等待页面加载...",
+    "description": "等待页面加载日志"
+  },
+  "logWaitingSeconds": {
+    "message": "等待5秒...",
+    "description": "等待秒数日志"
+  },
+  "logOpeningRewards": {
+    "message": "🌐 打开 Bing Rewards...",
+    "description": "打开Rewards日志"
+  },
+  "logTabCreated": {
+    "message": "✅ 标签页已创建",
+    "description": "标签页创建日志"
+  },
+  "logPageLoaded": {
+    "message": "✅ 页面已加载",
+    "description": "页面加载日志"
+  },
+  "logWaitingContentScript": {
+    "message": "⏳ 等待 content script...",
+    "description": "等待content script日志"
+  },
+  "logContentScriptReady": {
+    "message": "✅ Content script 准备就绪！",
+    "description": "Content script准备就绪日志"
+  },
+  "logContentScriptAttempt": {
+    "message": "尝试联系 content script {0}/10",
+    "description": "Content script尝试日志"
+  },
+  "logAttemptFailed": {
+    "message": "尝试 {0} 失败，等待中...",
+    "description": "尝试失败日志"
+  },
+  "logInjectingManually": {
+    "message": "⚠️ 手动注入脚本...",
+    "description": "手动注入脚本日志"
+  },
+  "logScriptInjected": {
+    "message": "脚本已手动注入",
+    "description": "脚本注入日志"
+  },
+  "logInjectionFailed": {
+    "message": "手动注入失败",
+    "description": "注入失败日志"
+  },
+  "logContentScriptNotResponding": {
+    "message": "Content script 无响应。请检查是否已登录 Microsoft Rewards。",
+    "description": "Content script无响应日志"
+  },
+  "logAutomationError": {
+    "message": "❌ 自动化错误",
+    "description": "自动化错误日志"
+  },
+  "logAutomationComplete": {
+    "message": "🎉 自动化完成！",
+    "description": "自动化完成日志"
+  },
+  "logDesktopSearches": {
+    "message": "🖥️ 开始桌面搜索...",
+    "description": "桌面搜索日志"
+  },
+  "logMobileSearches": {
+    "message": "📱 开始移动搜索...",
+    "description": "移动搜索日志"
+  },
+  "logDailyCards": {
+    "message": "🎯 处理每日卡片...",
+    "description": "每日卡片日志"
+  },
+  "logSearching": {
+    "message": "🔎 搜索中: {0}",
+    "description": "搜索日志"
+  },
+  "logSearchProgress": {
+    "message": "搜索 {0}/{1} 完成",
+    "description": "搜索进度日志"
+  },
+  "logCardCompleted": {
+    "message": "✅ 卡片完成: {0}",
+    "description": "卡片完成日志"
+  },
+  "logCardSkipped": {
+    "message": "⏭️ 卡片跳过（已完成）: {0}",
+    "description": "卡片跳过日志"
+  },
+  "logWaitingDelay": {
+    "message": "等待 {0}秒...",
+    "description": "等待延迟日志"
+  },
   "statDesktop": {
     "message": "桌面",
     "description": "桌面标签"

@@ -15,6 +15,118 @@
     "message": "Ready",
     "description": "Status when ready"
   },
+  "statusRunning": {
+    "message": "Running",
+    "description": "Status when running"
+  },
+  "logBotInstalled": {
+    "message": "Microsoft Rewards Bot installed!",
+    "description": "Bot installed log"
+  },
+  "logMessageReceived": {
+    "message": "Message received",
+    "description": "Message received log"
+  },
+  "logServiceWorkerActive": {
+    "message": "Service worker active",
+    "description": "Service worker active log"
+  },
+  "logStartingAutomation": {
+    "message": "🚀 Starting automation",
+    "description": "Starting automation log"
+  },
+  "logWaitingPageLoad": {
+    "message": "⏳ Waiting for page to load...",
+    "description": "Waiting for page log"
+  },
+  "logWaitingSeconds": {
+    "message": "Waiting 5 seconds...",
+    "description": "Waiting seconds log"
+  },
+  "logOpeningRewards": {
+    "message": "🌐 Opening Bing Rewards...",
+    "description": "Opening rewards log"
+  },
+  "logTabCreated": {
+    "message": "✅ Tab created",
+    "description": "Tab created log"
+  },
+  "logPageLoaded": {
+    "message": "✅ Page loaded",
+    "description": "Page loaded log"
+  },
+  "logWaitingContentScript": {
+    "message": "⏳ Waiting for content script...",
+    "description": "Waiting for content script log"
+  },
+  "logContentScriptReady": {
+    "message": "✅ Content script ready!",
+    "description": "Content script ready log"
+  },
+  "logContentScriptAttempt": {
+    "message": "Attempt {0}/10 to contact content script",
+    "description": "Content script attempt log"
+  },
+  "logAttemptFailed": {
+    "message": "Attempt {0} failed, waiting...",
+    "description": "Attempt failed log"
+  },
+  "logInjectingManually": {
+    "message": "⚠️ Injecting script manually...",
+    "description": "Injecting script manually log"
+  },
+  "logScriptInjected": {
+    "message": "Script injected manually",
+    "description": "Script injected log"
+  },
+  "logInjectionFailed": {
+    "message": "Failed to inject manually",
+    "description": "Injection failed log"
+  },
+  "logContentScriptNotResponding": {
+    "message": "Content script not responding. Please check if you are logged in to Microsoft Rewards.",
+    "description": "Content script not responding log"
+  },
+  "logAutomationError": {
+    "message": "❌ Automation error",
+    "description": "Automation error log"
+  },
+  "logAutomationComplete": {
+    "message": "🎉 Automation complete!",
+    "description": "Automation complete log"
+  },
+  "logDesktopSearches": {
+    "message": "🖥️ Starting desktop searches...",
+    "description": "Desktop searches log"
+  },
+  "logMobileSearches": {
+    "message": "📱 Starting mobile searches...",
+    "description": "Mobile searches log"
+  },
+  "logDailyCards": {
+    "message": "🎯 Processing daily cards...",
+    "description": "Daily cards log"
+  },
+  "logSearching": {
+    "message": "🔎 Searching: {0}",
+    "description": "Searching log"
+  },
+  "logSearchProgress": {
+    "message": "Search {0}/{1} complete",
+    "description": "Search progress log"
+  },
+  "logCardCompleted": {
+    "message": "✅ Card completed: {0}",
+    "description": "Card completed log"
+  },
+  "logCardSkipped": {
+    "message": "⏭️ Card skipped (already done): {0}",
+    "description": "Card skipped log"
+  },
+  "logWaitingDelay": {
+    "message": "Waiting {0}s...",
+    "description": "Waiting delay log"
+  },
   "statDesktop": {
     "message": "Desktop",
     "description": "Desktop label"
